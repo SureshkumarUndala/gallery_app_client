@@ -38,7 +38,10 @@ const Homepage = () => {
     }
  
 
+useEffect(()=>{
+  fetchPosts()
 
+},[])
 
   const deletepost =async(label)=>{
     console.log("hello")
