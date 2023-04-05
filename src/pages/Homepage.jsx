@@ -25,24 +25,23 @@ const Homepage = () => {
     
     }
 
+
+    const fetchPosts =()=>{
+      fetch("https://galleryapplicationapi.onrender.com/myposts", {
+        method: "get",
+        headers: {
+          "Authorization": "bearer " + localStorage.getItem("token")
+        },
+  
+      }).then(res => res.json())
+        .then(data => setPosts(data.posts))
+    }
  
 
 
-  useEffect(() => {
-    fetch("https://galleryapplicationapi.onrender.com/myposts", {
-      method: "get",
-      headers: {
-        "Authorization": "bearer " + localStorage.getItem("token")
-      },
-
-    }).then(res => res.json())
-      .then(data => setPosts(data.posts))
-
-
-
-  }, [posts ])
 
   const deletepost =async(label)=>{
+    console.log("hello")
      const delteposts = await fetch('https://galleryapplicationapi.onrender.com/deletepost/'+label,{
       method: "DELETE",
       headers: {
@@ -52,6 +51,9 @@ const Homepage = () => {
     
 
     }).catch(err=>console.log(err))
+    fetchPosts()
+  
+    
 
   }
 
@@ -72,6 +74,7 @@ const Homepage = () => {
     }).then(res => console.log(res.json())
     )
     setopen(false)
+    fetchPosts()
 
 
   }
