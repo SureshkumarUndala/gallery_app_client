@@ -57,7 +57,12 @@ const Signin = () => {
                 <Button type="submit" variant="contained" color='primary' 
                 onClick={login}
                 fullWidth>Sign In</Button>
-                <Typography variant='h6'>Don't have an account ? <Link href="/register" style={linkStyle}>Sign Up</Link></Typography>
+
+                <Typography component="span" variant='h6'>Don't have an account ?
+                 <Button  href="/register">sign up</Button> 
+                 </Typography>
+               
+
 
 
 
