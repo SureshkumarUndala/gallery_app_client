@@ -15,6 +15,10 @@ const Signin = () => {
     }
     const avatarStyle = { backgroundColor: "blue", marginBottom: "5px" }
     const linkStyle = { textDecoration: "none" }
+
+    const ClickHandler = ()=>{
+      Navigate("/register")
+    }
     
     
   const login = () => {
@@ -59,14 +63,8 @@ const Signin = () => {
                 fullWidth>Sign In</Button>
 
                 <Typography component="span" variant='h6'>Don't have an account ?
-                 <Button  href="/register">sign up</Button> 
+                 <Button  onClick={ClickHandler}  >sign up</Button> 
                  </Typography>
-               
-
-
-
-
-
             </Paper>
         </Box>
     );
