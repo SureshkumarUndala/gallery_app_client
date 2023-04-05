@@ -12,6 +12,8 @@ function App() {
       <Route path="/" element={<Signin/>}/>
       <Route path="/register" element={<Signup/>}/>
       <Route path="/homepage" element={<Homepage/>}/>
+      <Route path="*" element={<div>404 Not Found</div>}/>
+      
 
     </Routes>
     </BrowserRouter>
